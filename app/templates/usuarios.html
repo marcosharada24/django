@@ -1,0 +1,22 @@
+{% extends "template.html"%}
+
+{% block titulo %}Usuarios{% endblock %} 
+
+{% block conteudo %}
+
+ <h1>Usuarios</h1>
+
+ <table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>e-mail</th>
+    </tr>
+    {% for user in listUsuarios%}
+     <tr>
+        <td>{{user.nome}}</td>
+        <td>{{user.email}}</td>
+     </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
