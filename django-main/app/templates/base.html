@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta caharset="utf-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title>Django</title>
+        <link rel="stylesheet" href="{% static 'estilo.css' %}">
+    </head>
+    <body>
+        <header>
+            <img src="{% static 'django-logo.png' %}" width="15px">
+            Django
+            <hr>
+            <header>
+                <main>
+                    {% block conteudo %}
+                    {% endblock %}
+                </main>
+    </body>
+    </html>
