@@ -1,13 +1,11 @@
-from django import forms
-from app.models import Usuario 
-
-class formUsuario(forms.Modelform):
+class FormProduto(forms.ModelForm):
     class Meta:
-        model = Usuario
-        fields = ('nome','email','senha')
-
+        model = Produto
+        fields = ('nome', 'descricao', 'preco', 'estoque', 'imagem')  # 'estoque' adicionado
         widgets = {
-            'nome' : forms.TextInput(attrs={'type':'text'}),
-            'email' : forms.TextInput(attrs={'type':'email'}),
-            'senha' : forms.TextInput(attrs={'type':'passsword'})
-        }   
+            'nome': forms.TextInput(attrs={'class': 'form-control'}),
+            'descricao': forms.Textarea(attrs={'class': 'form-control'}),
+            'preco': forms.NumberInput(attrs={'class': 'form-control'}),
+            'estoque': forms.NumberInput(attrs={'class': 'form-control', 'min': 0}),
+            'imagem': forms.FileInput(attrs={'accept': 'image/*'})
+        }

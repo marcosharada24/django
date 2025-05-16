@@ -10,11 +10,24 @@
     <tr>
         <th>Nome</th>
         <th>e-mail</th>
+        <th>cep</th>
+        <th>logradouro</th>
+        <th>localidade</th>
+        <th>estado</th>
+        <th>número da residencia</th>
+        <th colspan="2">açoes</th>
     </tr>
     {% for user in listUsuarios%}
      <tr>
         <td>{{user.nome}}</td>
         <td>{{user.email}}</td>
+        <td>{{user.cep}}</td>
+        <td>{{user.logradouro}}</td>
+        <td>{{user.localidade}}</td>
+        <td>{{user.estado}}</td>
+        <td>{{user.numero da residencia}}</td>
+        <td><a href="{% url 'excluirUsuario' user.id %} ">excluir</a></td>
+        <td><a href="{% url 'editarUsuario' user.id %} ">editar</a></td>
      </tr>
     {% endfor %}
 </table>
